@@ -95,7 +95,7 @@ function Router() {
               element={
                 <AuthReq>
                   {isMobile ? (
-                    <div>
+                    <div className="bg-black  w-screen  h-full min-h-screen oveflow-y-scroll ">
                       <Component />
                     </div>
                   ) : (

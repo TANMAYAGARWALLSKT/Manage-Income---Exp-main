@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./utils/Navbar";
@@ -9,6 +9,7 @@ import { setUser } from "./utils/Redux";
 
 // Create a wrapped component to use Redux hooks
 function AppContent() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.nav.user);
 
@@ -28,6 +29,12 @@ function AppContent() {
       );
     });
 
+    const handleBeforeUnload = () => {
+      if (auth.currentUser) {
+        auth.signOut();
+      }
+    };
+
     window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
@@ -36,15 +43,21 @@ function AppContent() {
     };
   }, [dispatch]);
 
-  const handleBeforeUnload = () => {
-    if (auth.currentUser) {
-      // Sign out the user before the page is unloaded
-      auth.signOut();
-    }
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Fixes issue where state doesn't update correctly
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div className="bg-stone-400 Font flex items-center overflow-hidden gap-[1%]">
+    <div
+      className={`Font flex items-center ${
+        isMobile ? " overflow-x-hidden overflow-y-scroll bg-black" : " overflow-hidden bg-stone-400 "
+      } gap-[1%]`}
+    >
       {user && <Navbar />}
       <Router />
     </div>
