@@ -26,12 +26,12 @@ function MobileMenu() {
               >
                 <img
                   src={item.Icon}
-                  alt={item.Title}
+                  alt={item.Tilte}
                   className="w-8 h-8 flex justify-center items-center"
                 />
                 {isNavbarOpen && (
                   <div className="text-sm font-small text-white flex justify-center items-start">
-                    {item.Title}
+                    {item.Tilte}
                   </div>
                 )}
               </NavLink>
