@@ -1,0 +1,70 @@
+@import url("/Font/Sora_Complete/WEB/css/sora.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.Font {
+  font-family: "Sora-Variable";
+}
+html,
+body {
+  background-color: antiquewhite;
+}
+.shadow-box-income {
+  box-shadow: 5px 5px rgba(42, 255, 60, 0.4), 10px 10px rgba(42, 255, 60, 0.3),
+    15px 15px rgba(42, 255, 60, 0.2), 20px 20px rgba(42, 255, 60, 0.1),
+    25px 25px rgba(42, 255, 60, 0.05);
+}
+.shadow-box-expense {
+  box-shadow: 5px 5px rgba(245, 23, 23, 0.4), 10px 10px rgba(245, 23, 23, 0.3),
+    15px 15px rgba(245, 23, 23, 0.2), 20px 20px rgba(245, 23, 23, 0.1),
+    25px 25px rgba(245, 23, 23, 0.05);
+}
+
+.navbar {
+  background-color: #ffffff2c;
+}
+tr {
+  width: 10px;
+}
+
+::selection {
+  background-color: rgba(250, 250, 250, 0.46);
+}
+@keyframes Boxshadow {
+  0% {
+    box-shadow: 0 0 2rem 0 rgba(76, 217, 236, 0.221);
+  }
+
+  50% {
+    box-shadow: 0 0 2rem 0 rgba(76, 217, 236, 0.027);
+  }
+  100% {
+    box-shadow: 0 0 2rem 0 rgba(76, 217, 236, 0.221);
+  }
+}
+
+.noto-sans {
+  font-family: "Sora-Variable";
+}
+
+@keyframes Op {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+    /* z-index:100; */
+  }
+
+  100% {
+    opacity: 0;
+    /* z-index:-10; */
+  }
+}
+.custom-blur {
+  backdrop-filter: blur(12px);
+  background-color: rgba(240, 248, 255, 0.259);
+}
