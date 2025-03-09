@@ -11,7 +11,7 @@ import LoginInfo from "../LoginInfo/LoginInfo";
 import { SparklesCore } from "../Components/ui/sparkles";
 import { useSelector } from "react-redux";
 import Vendor from "../Components/Vendor/Vendor";
-import MobileMenau from "../utils/MobileMenau" ;
+import MobileMenau from "../utils/MobileMenau";
 function Router() {
   const [currentAuth, setCurrentAuth] = useState(false);
   const isNavbarOpen = useSelector((state) => state.nav.isNavbarOpen);
@@ -79,7 +79,7 @@ function Router() {
 
           {/* Shared styles for authenticated routes */}
           {[
-            {path:"/MobileMenau" ,Component : MobileMenau},
+            { path: "/MobileMenau", Component: MobileMenau },
             { path: "/Home", Component: Indexpage },
             { path: "/Dashboard", Component: Indexpage },
             { path: "/", Component: Indexpage },
@@ -101,12 +101,14 @@ function Router() {
                   ) : (
                     <div
                       className={`
+                        z-10
                     top-0 
                     shadow-2xl 
-                    overflow-hidden 
+                    overflow-x-hidden
+                    overflow-y-scroll
+                   
                     shadow-black/70 
-                    bg-black 
-                    absolute 
+                    bg-black  absolute 
                     right-0 
                     w-full 
                     sm:w-[83%] 

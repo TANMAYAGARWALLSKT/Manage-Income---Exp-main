@@ -8,8 +8,8 @@ function Income() {
   const [activeTab, setActiveTab] = useState("income");
 
   return (
-    <div className="flex flex-col items-center gap-5 justify-center min-h-screen p-4">
-      <div className="flex flex-row items-center bg-zinc-800 rounded-lg px-2 py-2 justify-center gap-2 w-full max-w-md">
+    <div className=" relative flex flex-col items-center gap-5 justify-center min-h-screen py-5  bg-black  my-auto z-40 ">
+      <div className=" relative flex flex-row items-center bg-zinc-800 rounded-lg px-2 py-2 justify-center gap-2 w-full max-w-md">
         <motion.div
           whileTap={{ scale: 0.95 }}
           className={`cursor-pointer py-2 px-6 md:px-8 w-full text-center rounded-md text-lg md:text-2xl font-medium transition-all duration-200 ${
@@ -33,6 +33,7 @@ function Income() {
           Expense
         </motion.div>
       </div>
+
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
@@ -40,7 +41,7 @@ function Income() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.1 }}
-          className="w-full max-w-3xl"
+          className="  w-full "
         >
           {activeTab === "income" && <Incometable />}
           {activeTab === "expense" && <Expense />}

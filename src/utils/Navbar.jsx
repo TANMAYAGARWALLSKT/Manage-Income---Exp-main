@@ -8,6 +8,7 @@ import { Navlink_Title } from "../data";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleNav } from "../utils/Redux";
 import { IconLogout } from "@tabler/icons-react";
+import { CiMenuBurger } from "react-icons/ci";
 
 function Navbar() {
   const [date, setDate] = useState("");
@@ -103,10 +104,11 @@ function MobileNavbar() {
     <>
       <NavLink to="./MobileMenau">
         {" "}
-        <div className="fixed top-0 left-0 w-20 h-20 bg-black/50 z-50 reounded-full ">
-          {" "}
+        <div className=" absolute top-0 left-0 w-16 h-16 text-white  z-50 rounded-full ">
+          <CiMenuBurger />
         </div>
       </NavLink>
+      ``
     </>
   );
 }

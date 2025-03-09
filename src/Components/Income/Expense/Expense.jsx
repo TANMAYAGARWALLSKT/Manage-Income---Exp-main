@@ -68,13 +68,20 @@ function Expense() {
   };
 
   return (
-    <div className="flex flex-col p-6 shadow-md rounded-lg gap-8 backdrop-blur border border-zinc-300 shadow-box-expense w-[40vw] mx-auto">
+    <div className="flex flex-col p-6 shadow-md rounded-lg gap-8 backdrop-blur border border-zinc-300 shadow-box-expense w-full max-w-xl mx-auto">
       <span>
         <h2 className="text-red-500 text-5xl font-bold">{type}</h2>
-        <h1 className="text-md text-white/30 font-light">Add your details for expense</h1>
+        <h1 className="text-md text-white/30 font-light">
+          Add your details for expense
+        </h1>
       </span>
 
-      <form ref={formRef} id="Expense" onSubmit={handleInput} className="flex flex-col gap-3">
+      <form
+        ref={formRef}
+        id="Expense"
+        onSubmit={handleInput}
+        className="flex flex-col gap-3"
+      >
         {/* Model Input */}
         <label className="text-lg text-white"> Model</label>
         <input
@@ -88,13 +95,13 @@ function Expense() {
 
         {/* Payment Mode Tiles */}
         <label className="text-lg text-white"> Payment Mode</label>
-        <div className="flex flex-1 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {paymentModes.map((mode) => (
             <button
               type="button"
               key={mode.name}
               onClick={() => SetPaymentMode(mode.name)}
-              className={`flex items-center justify-center flex-col flex-1 gap-2 px-2 py-4 rounded-lg border ${
+              className={`flex items-center justify-center flex-col gap-2 px-3 py-3 rounded-lg border text-sm md:text-base ${
                 PaymentMode === mode.name
                   ? "bg-red-600 text-white"
                   : "bg-transparent border-zinc-300/20 text-white hover:border-zinc-300"
@@ -127,7 +134,10 @@ function Expense() {
         ></textarea>
 
         {/* Submit Button */}
-        <button type="submit" className="w-full py-5 px-3 bg-red-600 text-white rounded-xl hover:bg-red-400 hover:text-black border border-zinc-400 transition">
+        <button
+          type="submit"
+          className="w-full py-5 px-3 bg-red-600 text-white rounded-xl hover:bg-red-400 hover:text-black border border-zinc-400 transition"
+        >
           Submit
         </button>
       </form>
