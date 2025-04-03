@@ -122,10 +122,10 @@ function Indexpage() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full h-full pt-4 sm:pt-6 overflow-y-scroll bg-black">
-      <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div className="flex flex-col items-center scrollbarnno w-full h-full pt-4 sm:pt-6 overflow-y-scroll bg-[#141414]">
+      <div className="w-full scrollbarnno px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center border-b-2 border-gray-300/20 py-2">
+        <div className="flex justify-between scrollbarnno items-center border-b-2 border-gray-300/20 py-2">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-300">
               Dashboard Overview
@@ -138,11 +138,11 @@ function Indexpage() {
         </div>
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <div className="grid grid-cols-1 scrollbarnno sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
           {["Income", "Expenses", "Balance", "Dues"].map((type, index) => (
             <div
               key={index}
-              className={`flex-1 min-w-[250px] p-1 border-2 shadow-lg rounded-xl
+              className={`flex-1 min-w-[250px] p-1 border-2 shadow-lg b rounded-xl
               ${
                 type === "Income"
                   ? "border-emerald-500 shadow-emerald-500/50"
@@ -153,7 +153,7 @@ function Indexpage() {
                   : "border-orange-500 shadow-red-500/50"
               }`}
             >
-              <div className="backdrop-blur-md bg-white/10 p-4 sm:p-6 rounded-lg">
+              <div className=" bg-[#333333] p-4 sm:p-6 rounded-lg">
                 <h3 className="text-xs sm:text-sm text-gray-300">{`Total ${type}`}</h3>
                 <p
                   className={`text-xl sm:text-2xl font-bold 
@@ -176,19 +176,20 @@ function Indexpage() {
         </div>
 
         {/* Transactions & Chart */}
-        <div className="flex flex-col lg:flex-row gap-6 mt-6">
+        <div className="flex flex-col lg:flex-row gap-6 mt-6 scrollbarnno">
           {/* Recent Transactions */}
-          <div className="w-full lg:w-[30%] h-auto max-h-[500px] overflow-y-auto bg-white rounded-xl shadow-sm border border-gray-100">
-            <div className="p-4 border-b border-gray-100">
-              <h2 className="text-lg font-semibold text-gray-900">
-                Recent Transactions
-              </h2>
+          <div className="w-full lg:w-[30%] h-auto max-h-[500px] overflow-y-auto bg-[#141414] relative text-white  rounded-xl shadow-sm border border-[#424242]">
+            <div className="p-4 border-b w-full sticky top-0 left-0 bg-[#141414] border-gray-100">
+              <h2 className="text-lg font-semibold ">Recent Transactions</h2>
             </div>
-            <div className="divide-y divide-gray-100">
+            <div className="divide-y z-30 scrollbarnno divide-gray-100">
               {data.map((item, index) => (
-                <div key={index} className="p-4 hover:bg-gray-50">
+                <div
+                  key={index}
+                  className="p-4 hover:bg-gray-50 hover:text-[#141414]"
+                >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-sm font-medium text-gray-900">
+                    <h3 className="text-sm font-medium ">
                       {item.Model || item.Notes}
                     </h3>
                     <p
@@ -208,7 +209,7 @@ function Indexpage() {
           </div>
 
           {/* Chart */}
-          <div className="flex-1 backdrop-blur-md bg-white/10 rounded-xl border-2 border-gray-500/30 shadow-lg p-6">
+          <div className="flex-1 backdrop-blur-md bg-[#333333] rounded-xl border-2 border-gray-500/30 shadow-lg p-6">
             <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px]">
               <Line
                 options={{
