@@ -55,7 +55,9 @@ function AppContent() {
   return (
     <div
       className={`Font flex items-center ${
-        isMobile ? " overflow-x-hidden overflow-y-scroll bg-black" : " overflow-hidden bg-stone-400 "
+        isMobile
+          ? " overflow-x-hidden overflow-y-scroll bg-black w-full h-full min-w-screen"
+          : " overflow-hidden bg-stone-400 "
       } gap-[1%]`}
     >
       {user && <Navbar />}
