@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../utils/firebase";
 import { motion, AnimatePresence } from "framer-motion";
+import { auth } from "../../utils/firebase";
 
 function AddVendor({ onClose }) {
   const [vendor, setVendor] = useState({
@@ -44,7 +45,13 @@ function AddVendor({ onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addDoc(collection(db, "Vender"), vendor);
+      // Get the user ID from auth
+      const userId = auth?.currentUser?.uid;
+
+      // Include userId in the vendor object
+      const vendorWithUserId = { ...vendor, userid: userId };
+
+      await addDoc(collection(db, "Vender"), vendorWithUserId);
       alert("Vendor added successfully!");
       setVendor({
         Name: "",
@@ -55,7 +62,7 @@ function AddVendor({ onClose }) {
       });
     } catch (error) {
       console.error("Error adding vendor:", error);
-      alert("Error adding vendor. Try again.");
+      console.log("ndor. Try again.");
     }
   };
 
