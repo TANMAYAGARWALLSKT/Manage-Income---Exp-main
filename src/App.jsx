@@ -56,8 +56,16 @@ function AppContent() {
   return (
     <div className="flex h-screen w-full bg-gray-900">
       {user && <Navbar />}
-      <main className={`flex-1 transition-all duration-300 ${user && (isMobile ? 'pt-16' : isNavbarOpen ? 'ml-64' : 'ml-20')}`}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main
+        className={`flex-1 transition-all duration-300 ${
+          user && (isMobile ? "pt-16 w-full" : isNavbarOpen ? "ml-64" : "ml-20")
+        }`}
+      >
+        <div
+          className={`${
+            isMobile ? "w-full px-0" : "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+          } py-6`}
+        >
           <Router />
         </div>
       </main>
