@@ -6,37 +6,43 @@ function MobileMenu() {
   const isNavbarOpen = true; // You might need to pass this from a parent component
 
   return (
-    <div className="bg-black w-screen h-screen text-3xl text-center flex justify-center items-center flex-col">
-      <div className="flex flex-col items-center py-8 gap-6">
+    <div className="bg-gradient-to-b from-gray-900 to-black w-screen h-screen flex justify-center items-center">
+      <div className="w-full max-w-md flex flex-col items-center py-8 px-4">
         {/* User Greeting */}
-        <h1 className="text-white">Guest</h1>
-
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-white">Welcome, Guest</h1>
+          <div className="h-1 w-20 bg-blue-500 mx-auto mt-2 rounded-full"></div>
+        </div>
+        
         {/* Navigation Links */}
-        <div className="flex flex-col gap-2 justify-center z-30 items-start w-full">
+        <div className="flex flex-col gap-4 w-full">
           {Navlink_Title.map((item, index) => (
-            <span
+            <NavLink
               key={index}
-              className={`${
-                isNavbarOpen ? "justify-start" : "justify-center"
-              } w-full flex py-2 pr-4 items-center`}
+              to={`/${item.Link.replace(/^MobileMenu\//, "")}`}
+              className={({ isActive }) => 
+                `flex items-center gap-4 p-4 rounded-lg transition-all duration-300 ${
+                  isActive 
+                    ? "bg-blue-600 text-white" 
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                }`
+              }
             >
-              <NavLink
-                to={`/${item.Link.replace(/^MobileMenu\//, "")}`} // Fixes incorrect link
-                className="flex items-center justify-center gap-3 text-white"
-              >
+              <div className="flex justify-center items-center w-10 h-10 bg-gray-900 rounded-full p-2">
                 <img
                   src={item.Icon}
                   alt={item.Tilte}
-                  className="w-8 h-8 flex justify-center items-center"
+                  className="w-full h-full object-contain"
                 />
-                {isNavbarOpen && (
-                  <div className="text-sm font-small text-white flex justify-center items-start">
-                    {item.Tilte}
-                  </div>
-                )}
-              </NavLink>
-            </span>
+              </div>
+              <span className="text-lg font-medium">{item.Tilte}</span>
+            </NavLink>
           ))}
+        </div>
+        
+        {/* Footer */}
+        <div className="mt-auto pt-8">
+          <div className="text-gray-500 text-sm">© 2025 Your Company</div>
         </div>
       </div>
     </div>
