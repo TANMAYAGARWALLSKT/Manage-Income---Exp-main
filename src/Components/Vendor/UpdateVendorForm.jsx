@@ -102,7 +102,7 @@ function UpdateVendorForm({ selectedVendor, setSelectedVendor, setTotalDueAllVen
             className="text-3xl font-semibold mb-4 border-b-1 border-[#141414] pb-2 flex justify-between"
             layout
           >
-            <motion.h2 layout>Update Vendor: {selectedVendor.Name}</motion.h2>
+            <motion.h2 layout> {selectedVendor.Name}</motion.h2>
             <motion.button
               onClick={() => setSelectedVendor(null)}
               className="font-light text-stone-500"
