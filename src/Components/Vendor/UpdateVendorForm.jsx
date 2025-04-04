@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../utils/firebase";
-
+import { IoMdClose } from "react-icons/io";
 function UpdateVendorForm({ selectedVendor, setSelectedVendor, setTotalDueAllVendors }) {
   const [paymentAmount, setPaymentAmount] = useState("");
   const [purchaseAmount, setPurchaseAmount] = useState("");
@@ -99,7 +99,7 @@ function UpdateVendorForm({ selectedVendor, setSelectedVendor, setTotalDueAllVen
           transition={{ duration: 0.3, delay: 0.3 }}
         >
           <motion.div
-            className="text-3xl font-semibold mb-4 border-b-1 border-[#141414] pb-2 flex justify-between"
+            className="text-3xl relative  font-semibold mb-4 border-b-1 border-[#141414] pb-2 flex justify-between"
             layout
           >
             <motion.h2 layout> {selectedVendor.Name}</motion.h2>
@@ -110,7 +110,7 @@ function UpdateVendorForm({ selectedVendor, setSelectedVendor, setTotalDueAllVen
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.3 }}
             >
-              ✖
+              <IoMdClose />
             </motion.button>
           </motion.div>
 
