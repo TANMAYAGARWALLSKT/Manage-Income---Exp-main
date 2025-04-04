@@ -12,6 +12,7 @@ function AppContent() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.nav.user);
+  const isNavbarOpen = useSelector((state) => state.nav.isNavbarOpen);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -53,15 +54,13 @@ function AppContent() {
   }, []);
 
   return (
-    <div
-      className={`Font flex items-center ${
-        isMobile
-          ? " overflow-x-hidden overflow-y-scroll bg-black w-full h-full min-w-screen"
-          : " overflow-hidden bg-stone-400 "
-      } gap-[1%]`}
-    >
+    <div className="flex h-screen w-full bg-gray-100">
       {user && <Navbar />}
-      <Router />
+      <main className={`flex-1 transition-all duration-300 ${user && (isMobile ? 'pt-16' : isNavbarOpen ? 'ml-64' : 'ml-20')}`}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <Router />
+        </div>
+      </main>
     </div>
   );
 }
