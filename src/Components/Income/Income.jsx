@@ -8,7 +8,7 @@ function Income() {
   const [activeTab, setActiveTab] = useState("income");
 
   return (
-    <div className=" relative flex flex-col items-center gap-5 justify-center min-h-screen py-5  bg-black  my-auto z-40 ">
+    <div className=" relative flex flex-col items-center gap-5 justify-center min-h-screen py-5  bg-black  my-auto z-30 ">
       <div className=" relative flex flex-row items-center bg-zinc-800 rounded-lg px-2 py-2 justify-center gap-2 w-full max-w-md">
         <motion.div
           whileTap={{ scale: 0.95 }}
