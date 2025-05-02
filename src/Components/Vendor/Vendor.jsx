@@ -44,6 +44,7 @@ function Vendor() {
 
       setVendors(vendorsArray);
       setTotalDueAllVendors(totalDue);
+      
     } catch (error) {
       alert("Error fetching vendor data. Please try again.");
       console.error("Error fetching vendors:", error);

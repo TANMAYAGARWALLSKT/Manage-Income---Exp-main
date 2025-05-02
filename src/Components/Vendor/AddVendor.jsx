@@ -60,6 +60,7 @@ function AddVendor({ onClose }) {
         PurchaseTransactions: [{ id: "", amount: 0, date: "" }],
         TotalDue: 0,
       });
+      onClose();
     } catch (error) {
       console.error("Error adding vendor:", error);
       console.log("ndor. Try again.");

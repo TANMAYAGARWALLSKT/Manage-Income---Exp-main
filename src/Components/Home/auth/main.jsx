@@ -16,7 +16,7 @@ export default function Auth() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [UserPhotoURL, setUserPhotoURL] = useState(
-    " https://via.placeholder.com/150" // Default profile picture URL
+    " https://placehold.co/600x400" // Default profile picture URL
   );
 
   const toggleVisibility = () => setIsVisible(!isVisible);

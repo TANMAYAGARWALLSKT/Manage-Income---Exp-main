@@ -9,7 +9,9 @@ html,
 body {
   background-color: antiquewhite;
 }
-
+.myblur {
+  /* filter: ; */
+}
 .shadow-box-income {
   box-shadow: 5px 5px rgba(42, 255, 60, 0.4), 10px 10px rgba(42, 255, 60, 0.3),
     15px 15px rgba(42, 255, 60, 0.2), 20px 20px rgba(42, 255, 60, 0.1),
@@ -91,4 +93,9 @@ option {
 .scrollbarnno ::-webkit-scrollbar {
   display: none;
   scrollbar-width: 1px;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  display: none;
 }

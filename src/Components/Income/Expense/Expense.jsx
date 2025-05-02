@@ -69,7 +69,7 @@ function Expense() {
 
   return (
     <div className="flex flex-col p-6 shadow-md rounded-lg gap-8 backdrop-blur border border-zinc-300 shadow-box-expense w-full max-w-xl mx-auto">
-      <span>
+      <span className=" border-b-1 border-red-500/30 pb-2">
         <h2 className="text-red-500 text-5xl font-bold">{type}</h2>
         <h1 className="text-md text-white/30 font-light">
           Add your details for expense

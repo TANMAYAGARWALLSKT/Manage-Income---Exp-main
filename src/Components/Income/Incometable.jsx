@@ -69,7 +69,7 @@ function Incometable() {
 
   return (
     <div className="flex flex-col p-6 shadow-md rounded-lg gap-8 backdrop-blur border border-zinc-300 shadow-box-income w-full max-w-xl mx-auto ">
-      <span>
+      <span className=" border-b-1 border-green-500/30 pb-2">
         <h2 className="text-green-500 text-3xl md:text-4xl font-bold">{type}</h2>
         <h1 className="text-md text-white/30 font-light">
           Add your details for income

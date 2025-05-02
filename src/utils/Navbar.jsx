@@ -146,7 +146,7 @@ function MobileNavbar({
         <div className="flex items-center gap-2">
           <button
             onClick={toggleMenu}
-            className="text-zinc-800 focus:outline-none"
+            className="text-zinc-800 focus:outline-none "
           >
             {isOpen ? (
               <IoCloseOutline className="w-8 h-8" />
@@ -172,7 +172,7 @@ function MobileNavbar({
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-14 left-0 w-full h-full bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-14 left-0 w-full h-full bg-[#F5F5F5] z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -200,9 +200,7 @@ function MobileNavbar({
                   to={item.Link}
                   className={({ isActive }) =>
                     `flex items-center gap-3 p-2 rounded-lg ${
-                      isActive
-                        ? "bg-blue-50 text-blue-700"
-                        : "text-gray-700 hover:bg-gray-100"
+                      isActive ? "bg-blue-300 text-blue-700" : "text-gray-700 "
                     }`
                   }
                   onClick={toggleMenu}
@@ -248,10 +246,10 @@ function LaptopNavbar({
       <div
         className={`${
           isNavbarOpen ? "w-64" : "w-20"
-        } fixed top-0 left-0 h-full min-h-screen flex flex-col justify-between py-5 bg-white text-zinc-800 shadow-lg transition-all duration-300 z-50`}
+        } fixed top-0 left-0 h-full min-h-screen flex flex-col justify-between py-5 bg-[#F2F3F4] backdrop-blur-xl  text-zinc-800 shadow-lg transition-all duration-300 z-50`}
       >
         <div
-          className="absolute top-10 -right-3 transform bg-white hover:bg-gray-100 cursor-pointer p-2 rounded-full shadow-md"
+          className="absolute top-10 -right-3 transform bg-white  cursor-pointer p-2 rounded-full shadow-2xl shadow-black"
           onClick={toggleNavbar}
         >
           {isNavbarOpen ? (
@@ -275,8 +273,8 @@ function LaptopNavbar({
           )}
         </div>
 
-        <div className="flex flex-col items-center gap-2 w-full">
-          <div className="px-4 py-3 w-full">
+        <div className="flex flex-col items-center  gap-2 w-full">
+          <div className="px-4 pt-3 w-full border-b-1 border-zinc-500">
             <div
               className={`flex ${
                 isNavbarOpen
@@ -286,7 +284,7 @@ function LaptopNavbar({
               onClick={toggleProfile}
             >
               <img
-                className="h-10 w-10 rounded-full border border-gray-300 object-cover"
+                className="h-10 w-10 rounded-full border shadow-2xl border-gray-300 object-cover"
                 src={userPhotoURL}
                 alt="User Profile"
               />

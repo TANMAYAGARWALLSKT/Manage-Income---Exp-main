@@ -37,6 +37,6 @@ export const Navlink_Title = [
     Tilte: "Vendor",
     Link: "./Vendor",
     accessKey: "V",
-    Icon: "./Vendor.svg",
+    Icon: "./vendor.svg",
   },
 ];

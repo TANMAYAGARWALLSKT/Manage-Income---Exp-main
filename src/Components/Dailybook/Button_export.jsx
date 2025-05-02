@@ -29,7 +29,7 @@ export default function ExportButton({ data }) {
   };
 
   return (
-    <Button className="w-30 text-3xl p-10  mt-10" onClick={handleExport} type="Export">
+    <Button className="w-30 text-xl py-2 px-4 shadow-lg shadow-slate-400/40 hover:shadow-slate-400/80  mt-10" onClick={handleExport} type="Export">
       Export
     </Button>
   );
